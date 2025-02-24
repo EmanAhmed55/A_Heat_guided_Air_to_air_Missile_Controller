@@ -25,7 +25,7 @@
   <p>The story of the project starts as follows:</p>
   <ol>
     <li>First, the missile is launched.</li>
-    <li>Half a second later, the burner is activated. The burner will deactivate in case of missile explosion or if an error occurs.</li>
+    <li>Half a second later, the burner is activated. The burner will be  deactivated in case of missile explosion or if an error occurs.</li>
     <li>The controller includes wings that help steer the missile towards its target. Each set of wings has 5 modes:
       <ul>
         <li>Centered</li>
