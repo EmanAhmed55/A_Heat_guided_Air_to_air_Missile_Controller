@@ -1,0 +1,152 @@
+label.logo {
+    background: #0082e6;
+    height: 70px;
+    width: 100%;
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-size: bold;
+    font-weight: bold;
+    box-shadow: 1px 10px 10px #ddd inset;
+    text-shadow: 10px 10px 10px gray;
+}
+
+* {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    background-image: url('src\assets\IMG_20220430_222850_427.jpg');
+    background-size: cover;
+    background-origin: content-box;
+    background-attachment: fixed;
+    font-family: auto;
+    line-height: normal;
+    height: 820px;
+
+}
+
+.logo {
+    color: rgb(51, 27, 185);
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#loc {
+    color: rgb(8, 8, 8);
+    font-size: medium;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transform: translate(-50%, -50%);
+    background: hsla(191, 73%, 84%, 0.502);
+    position: absolute;
+    width: 350px;
+    height: auto;
+    right: -3%;
+    bottom: -6%;
+    text-align: center;
+
+}
+
+#loc:hover {
+    border-radius: 20px;
+    box-shadow: 0px 0px 40px 30px rgb(17, 94, 161);
+}
+
+form input {
+    width: 60px;
+    height: 30px;
+    background: transparent;
+    text-align: center;
+    font-size: larger;
+    padding-top: 0%;
+    padding-left: 0%;
+}
+
+#loc2 {
+    color: rgb(8, 8, 8);
+    font-size: medium;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transform: translate(-50%, -50%);
+    background: hsla(191, 73%, 84%, 0.502);
+    position: absolute;
+    width: 350px;
+    height: auto;
+    text-align: center;
+    left: 14%;
+    bottom: 30%;
+
+}
+
+#loc2:hover {
+    border-radius: 20px;
+    box-shadow: 0px 0px 40px 30px rgb(17, 94, 161);
+}
+
+#loc3 {
+    color: rgb(8, 8, 8);
+    font-size: medium;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transform: translate(-50%, -50%);
+    background: hsla(191, 73%, 84%, 0.502);
+    position: absolute;
+    width: 350px;
+    height: 280px;
+    text-align: center;
+    right: 67%;
+    bottom: -7%;
+}
+
+#loc3:hover {
+    border-radius: 20px;
+    box-shadow: 0px 0px 40px 30px rgb(17, 94, 161);
+}
+
+.btn2:hover {
+    background-color: rgb(160, 188, 229);
+}
+
+.btn2 {
+    transform: translate(-50%, -50%);
+    background: rgba(120, 214, 238, 0.5);
+    text-align: center;
+    color: navy;
+    height: fit-content;
+    font-size: small;
+    font-style: italic;
+    width: fit-content;
+    position: absolute;
+    right: 50%;
+    bottom: 7%;
+    padding: 14px 40px;
+    display: inline-block;
+    margin-top: 4px 2px;
+    cursor: pointer;
+}
+
+.btn1:hover {
+    background-color: rgb(160, 188, 229);
+}
+
+.btn1 {
+    transform: translate(-50%, -50%);
+    background: rgba(183, 175, 219, 0.5);
+    text-align: center;
+    color: navy;
+    height: 30px;
+    font-size: medium;
+    font-style: italic;
+    letter-spacing: normal;
+    font-weight: bold;
+    position: absolute;
+    right: 10%;
+    bottom: 7%;
+    padding: 14px 40px;
+    display: inline-block;
+    cursor: pointer;
+
+}

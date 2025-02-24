@@ -1,0 +1,258 @@
+<div class="llogo">
+    <label class="logo">
+        <h1>Missile Sensor</h1>
+    </label>
+</div>
+
+<body>
+    <div class="container">
+        <form method="post" #userform="ngForm" novalidate (ngSubmit)="submitdata()">
+            {{userform.value | json}}
+            <br>
+            {{usermodel | json}}
+            <br>
+
+            <div id="loc">
+                <div class="form-group">
+                    <label for="one"> Enter missile location (x,cooridnate) :</label>
+                    <input type="number" min="0" max="2000" id="one" class="form-container" required placeholder="100m"
+                        name="missilelocationx" [(ngModel)]="usermodel.missilelocationx" #mislocx="ngModel"
+                        [class.is-invalid]="mislocx.invalid&&mislocx.touched">
+                    <br>
+                    <small class="text-danger" [class.d-none]="mislocx.valid||mislocx.untouched">location is
+                        required and the maxium distance is 2000m</small>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="two"> Enter missile location (y,cooridnate) :</label>
+                    <input type="number" min="0" max="2000" id="two" class="form-container" required placeholder="100m"
+                        name="missilelocationy" [(ngModel)]="usermodel.missilelocationy" #mislocy="ngModel"
+                        [class.is-invalid]="mislocy.invalid&&mislocy.touched">
+                    <br>
+                    <small class="text-danger" [class.d-none]="mislocy.valid||mislocy.untouched">location is
+                        required and the maxium distance is 2000m</small>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="three"> Enter target location (x,cooridnate) :</label>
+                    <input type="number" min="0" max="2000" id="three" class="form-container" required
+                        placeholder="100m" name="targetlocationx" [(ngModel)]="usermodel.targetlocationx"
+                        #tarlocx="ngModel" [class.is-invalid]="tarlocx.invalid&&tarlocx.touched">
+                    <br>
+                    <small class="text-danger" [class.d-none]="tarlocx.valid||tarlocx.untouched">location is
+                        required and the maxium distance is 2000m</small>
+                </div>
+                <br>
+                <br>
+                <div class="form-group">
+                    <label for="four"> Enter target location (y,cooridnate) :</label>
+                    <input type="number" min="0" max="2000" id="four" class="form-container" required placeholder="100m"
+                        name="targetlocationy" [(ngModel)]="usermodel.targetlocationy" #tarlocy="ngModel"
+                        [class.is-invalid]="tarlocy.invalid&&tarlocy.touched">
+                    <br>
+                    <small class="text-danger" [class.d-none]="tarlocy.valid||tarlocy.untouched">location is
+                        required and the maxium distance is 2000m</small>
+                </div>
+            </div>
+            <br>
+
+
+
+            <div class="form-group" id="loc2">
+                <p>Enter target position:</p>
+                  <input type="radio" id="centered" name="positions" [(ngModel)]="usermodel.position" [value]="0"
+                    #pos="ngModel" required>
+                  <label for="centered">CENTERED</label><br>
+                  <input type="radio" id="up" name="positions" [(ngModel)]="usermodel.position" [value]="1"
+                    #pos="ngModel" required>
+                  <label for="up">UP</label><br>
+                  <input type="radio" id="down" name="positions" [(ngModel)]="usermodel.position" [value]="2"
+                    #pos="ngModel">
+                  <label for="down">DOWN</label><br>
+                  <input type="radio" id="right" name="positions" [(ngModel)]="usermodel.position" [value]="3"
+                    #pos="ngModel">
+                  <label for="right">RIGHT</label><br>
+                  <input type="radio" id="left" name="positions" [(ngModel)]="usermodel.position" [value]="4"
+                    #pos="ngModel">
+                  <label for="left">LEFT</label>
+                <br>
+
+                <small class="text-danger" [class.d-none]="pos.valid||pos.untouched">please choose a position</small>
+
+
+            </div>
+            <br>
+
+            <br>
+            <div id="loc3">
+                <div class="form-group">
+                    <label for="five"> Enter angel deviation :</label>
+                    <input type="number" min="0" max="180" id="five" class="form-container" required
+                        placeholder="40 &#176;" name="targetdeviation" [(ngModel)]="usermodel.deviation" #dev="ngModel"
+                        [class.is-invalid]="dev.invalid&&dev.touched">
+                    <br>
+                    <small class="text-danger" [class.d-none]="dev.valid||dev.untouched">deviation is required and
+                        maxium
+                        deviation is 180</small>
+                </div>
+                <!--- <div class="form-group">
+                    <label for="six"> Enter target temperature</label>
+                    <input type="number" min="0" max="2000" id="six" class="form-container" required
+                        placeholder="200 &#176; C" name="targettemperature" [(ngModel)]="usermodel.temperature"
+                        #tem="ngModel" [class.is-invalid]="tem.invalid&&tem.touched">
+                    <br>
+                    <small class="text-danger" [class.d-none]="tem.valid||tem.untouched">deviation is required and
+                        maxium
+                        temperature is 2000</small>
+                </div>-->
+                <div class="form-group">
+                    <label for="six"> Enter target temperature</label>
+                    <input type="number" min="0" max="2000" id="six" class="form-container" required
+                        placeholder="200 &#176; C" name="targettemperature" [(ngModel)]="usermodel.temperature"
+                        #tem="ngModel" [class.is-invalid]="tem.invalid&&tem.touched">
+                    <br>
+                    <small class="text-danger" [class.d-none]="tem.valid||tem.untouched">deviation is required and
+                        maxium
+                        temperature is 2000</small>
+                </div>
+                <div class="form-group">
+                    <p>burner malfunction?</p>
+                      <input type="radio" id="true" name="burnermal" [(ngModel)]="usermodel. burnermalfunction"
+                        value="true" #burner="ngModel" required>
+                      <label for="true">true</label><br>
+                      <input type="radio" id="false" name="burnermal" [(ngModel)]="usermodel. burnermalfunction"
+                        value="false" #burner="ngModel">
+                      <label for="false">false</label><br>
+                     
+
+
+                    <br>
+
+                    <small class="text-danger" [class.d-none]="burner.valid||burner.untouched">please choose a
+                        value
+                        (yes or no)</small>
+
+
+                </div>
+                <br>
+                <br>
+                <br>
+                <br><br><br><br>
+                <input type="submit" value="Send" [disabled]="userform.form.invalid" class="btn1">
+
+                <input type="reset" value="Reset" class="btn2">
+            </div>
+            <br>
+
+        </form>
+
+
+    </div>
+
+</body>
+<div>
+    &copy; FCIH developers 2022
+</div>
+<!--<div class="container">
+    <h1>MISSILE SENSOR</h1>
+    <form method="post" #userform="ngForm" novalidate (ngSubmit)="submitdata()">
+        {{userform.value | json}}
+        <br>
+        {{usermodel | json}}
+        <div class="form-group">
+            <label for="one"> Enter missile location (x,cooridnate) :</label>
+            <input type="number" min="0" max="2000" id="one" class="form-container" required placeholder="100m"
+                name="missilelocationx" [(ngModel)]="usermodel.missilelocationx" #mislocx="ngModel"
+                [class.is-invalid]="mislocx.invalid&&mislocx.touched">
+            <br>
+            <small class="text-danger" [class.d-none]="mislocx.valid||mislocx.untouched">location is
+                required and the maxium distance is 2000m</small>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="two"> Enter missile location (y,cooridnate) :</label>
+            <input type="number" min="0" max="2000" id="two" class="form-container" required placeholder="100m"
+                name="missilelocationy" [(ngModel)]="usermodel.missilelocationy" #mislocy="ngModel"
+                [class.is-invalid]="mislocy.invalid&&mislocy.touched">
+            <br>
+            <small class="text-danger" [class.d-none]="mislocy.valid||mislocy.untouched">location is
+                required and the maxium distance is 2000m</small>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="three"> Enter target location (x,cooridnate) :</label>
+            <input type="number" min="0" max="2000" id="three" class="form-container" required placeholder="100m"
+                name="targetlocationx" [(ngModel)]="usermodel.targetlocationx" #tarlocx="ngModel"
+                [class.is-invalid]="tarlocx.invalid&&tarlocx.touched">
+            <br>
+            <small class="text-danger" [class.d-none]="tarlocx.valid||tarlocx.untouched">location is
+                required and the maxium distance is 2000m</small>
+        </div>
+        <br>
+        <br>
+        <div class="form-group">
+            <label for="four"> Enter target location (y,cooridnate) :</label>
+            <input type="number" min="0" max="2000" id="four" class="form-container" required placeholder="100m"
+                name="targetlocationy" [(ngModel)]="usermodel.targetlocationy" #tarlocy="ngModel"
+                [class.is-invalid]="tarlocy.invalid&&tarlocy.touched">
+            <br>
+            <small class="text-danger" [class.d-none]="tarlocy.valid||tarlocy.untouched">location is
+                required and the maxium distance is 2000m</small>
+        </div>
+        <br>
+
+
+
+        <div class="form-group">
+            <p>Enter target position:</p>
+              <input type="radio" id="up" name="positions" [(ngModel)]="usermodel.position" value="up" #pos="ngModel"
+                required>
+              <label for="up">UP</label><br>
+              <input type="radio" id="down" name="positions" [(ngModel)]="usermodel.position" value="down"
+                #pos="ngModel">
+              <label for="down">DOWN</label><br>
+              <input type="radio" id="right" name="positions" [(ngModel)]="usermodel.position" value="right"
+                #pos="ngModel">
+              <label for="right">RIGHT</label><br>
+              <input type="radio" id="left" name="positions" [(ngModel)]="usermodel.position" value="left"
+                #pos="ngModel">
+              <label for="left">LEFT</label>
+
+            <small class="text-danger" [class.d-none]="pos.valid||pos.untouched">please choose a position</small>
+
+
+        </div>
+        <br>
+
+        <br>
+        <div class="form-group">
+            <label for="five"> Enter angel deviation :</label>
+            <input type="number" min="0" max="180" id="five" class="form-container" required placeholder="40 &#176;"
+                name="targetdeviation" [(ngModel)]="usermodel.deviation" #dev="ngModel"
+                [class.is-invalid]="dev.invalid&&dev.touched">
+            <br>
+            <small class="text-danger" [class.d-none]="dev.valid||dev.untouched">deviation is required and maxium
+                deviation is 180</small>
+        </div>
+        <div class="form-group">
+            <label for="six"> Enter target temperature</label>
+            <input type="number" min="0" max="2000" id="six" class="form-container" required placeholder="200 &#176; C"
+                name="targettemperature" [(ngModel)]="usermodel.temperature" #tem="ngModel"
+                [class.is-invalid]="tem.invalid&&tem.touched">
+            <br>
+            <small class="text-danger" [class.d-none]="tem.valid||tem.untouched">deviation is required and maxium
+                temperature is 2000</small>
+        </div>
+        <input type="submit" value="send information" [disabled]="userform.form.invalid">
+
+        <input type="reset" value="Reset">
+
+    </form>
+
+    <!-- <div *ngFor="let sensor of allusers">
+        <p>{{sensor.id}}</p>
+    </div>-->
+<!-- <div>{{allusers}}</div>
+
+
+</div>-->
