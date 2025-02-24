@@ -1,5 +1,55 @@
-A simple web project by using Angular and firebase.This web project is about a missile that contains a burner, a proximity trigger, a warhead , two sets of wings , yaw (left ,right) , pitch ( up ,down) , a launch sensor , and an infra-red camera
-The story of the project starts as first the missile launched then a half a second later , the burner will be activated and will be unactivated in case of missile explosion or occurrence of errors.
-This controller has wings to shoot the target.Each set of wings has 5 modes which are : centered , small deviation to left /right and strong deviation to each direction.
-After 3  seconds from launching , the burner may stop or the arming will be cancelled  in two cases which are: burner malfunction or losing target by camera.
-The warhead explodes in one case which is arming the missile and activating the detected proximity.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Missile Controller Web Project</title>
+</head>
+<body>
+  <h1>Missile Controller Web Project</h1>
+
+  <p>This is a simple web project developed using Angular and Firebase. The purpose of the project is to simulate the control system of a missile, which includes several components that interact with each other during flight.</p>
+
+  <h2>Components of the Missile</h2>
+  <ul>
+    <li>Burner</li>
+    <li>Proximity Trigger</li>
+    <li>Warhead</li>
+    <li>Two Sets of Wings</li>
+    <li>Yaw (Left, Right)</li>
+    <li>Pitch (Up, Down)</li>
+    <li>Launch Sensor</li>
+    <li>Infra-Red Camera</li>
+  </ul>
+
+  <h2>How the Missile Controller Works</h2>
+  <p>The story of the project starts as follows:</p>
+  <ol>
+    <li>First, the missile is launched.</li>
+    <li>Half a second later, the burner is activated. The burner will deactivate in case of missile explosion or if an error occurs.</li>
+    <li>The controller includes wings that help steer the missile towards its target. Each set of wings has 5 modes:
+      <ul>
+        <li>Centered</li>
+        <li>Small deviation to left</li>
+        <li>Small deviation to right</li>
+        <li>Strong deviation to left</li>
+        <li>Strong deviation to right</li>
+      </ul>
+    </li>
+    <li>Three seconds after launch, the burner may stop, or the arming may be canceled in two cases:
+      <ul>
+        <li>Burner malfunction</li>
+        <li>Losing the target by the camera</li>
+      </ul>
+    </li>
+    <li>The warhead explodes if the missile is armed and the proximity trigger is activated.</li>
+  </ol>
+
+  <h2>Technologies Used</h2>
+  <ul>
+    <li>Angular</li>
+    <li>Firebase</li>
+  </ul>
+</body>
+</html>
+
